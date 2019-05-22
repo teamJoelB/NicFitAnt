@@ -32,4 +32,17 @@ public class PoidsDao {
         requete.execute();
            
     }
+        
+        //Mettre à jour poids
+        
+     public static void update(Poids p) throws SQLException{
+        String sql  ="UPDATE 'poids' SET 'val_Poids' = ? WHERE id_User=User_id_User";
+        Connection connexion = ConnectBd.getConnection(); 
+        
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setDouble(1, p.getVal_Poids());
+
+        
+        requete.execute();
+    }        
 }

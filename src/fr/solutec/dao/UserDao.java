@@ -72,6 +72,25 @@ public class UserDao {
         requete.execute();
     }
     
+        // Mettre à jour info profil utilisateur
+     public static void update(User u) throws SQLException{
+        String sql  ="UPDATE 'personne' SET 'nom' = ?, 'prenom' = ?, 'age' =?, 'mail' =?, 'login'=?, 'mdp'=?, 'taille'=?, 'sexe'=? WHERE login=? AND mdp=?";
+        Connection connexion = ConnectBd.getConnection(); 
+        
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setString(1, u.getNom());
+        requete.setString(2, u.getPrenom());
+        requete.setInt(3, u.getAge());
+        requete.setString(4, u.getMail());
+        requete.setString(5, u.getLogin());
+        requete.setString(6, u.getMdp());
+        requete.setDouble(7, u.getTaille());
+        requete.setString(8, u.getSexe());
+        requete.setString(9, u.getLogin());
+        requete.setString(10, u.getMdp());
+        
+        requete.execute();
+    }
    
     
 }

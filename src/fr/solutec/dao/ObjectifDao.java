@@ -6,7 +6,6 @@
 package fr.solutec.dao;
 
 import fr.solutec.model.Objectif;
-import fr.solutec.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
