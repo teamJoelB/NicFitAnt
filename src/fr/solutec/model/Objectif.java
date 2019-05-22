@@ -19,18 +19,22 @@ public class Objectif {
     private int valeur_Max;
     private int valeur_Actuelle;
     private Date echeance;
+    private User user;
 
     
     // constructeur general
-    
-    public Objectif(int id_Objectif, String description, String categorie, int valeur_Max, int valeur_Actuelle, Date echeance) {
+
+    public Objectif(int id_Objectif, String description, String categorie, int valeur_Max, int valeur_Actuelle, Date echeance, User user) {
         this.id_Objectif = id_Objectif;
         this.description = description;
         this.categorie = categorie;
         this.valeur_Max = valeur_Max;
         this.valeur_Actuelle = valeur_Actuelle;
         this.echeance = echeance;
+        this.user = user;
     }
+    
+ 
 
     // Constructeur d'ajout d'objectif
     
@@ -91,6 +95,14 @@ public class Objectif {
 
     public void setEcheance(Date echeance) {
         this.echeance = echeance;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
     
     
