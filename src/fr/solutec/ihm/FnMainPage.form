@@ -23,13 +23,326 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="P_fond_quotidien" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                      <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="B_Profil" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
+                      <Component id="Lb_Maindescr" min="-2" pref="313" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="B_Aide" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="B_retour_acc" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Lb_Maindescr" alignment="3" min="-2" pref="63" max="-2" attributes="0"/>
+                  <Component id="B_Profil" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="B_retour_acc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="B_Aide" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="173" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="P_fond_quotidien" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <Component id="jPanel1" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="P_fond_quotidien">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="Lb_Q5" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Lb_Q4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Lb_Q3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Lb_Q2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Lb_Q1" alignment="0" pref="200" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="Check_OQ1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ2" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ4" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ5" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace pref="246" max="32767" attributes="0"/>
+                  <Component id="B_Objectif" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" attributes="0">
+                  <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_Q1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_Q2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_Q3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_Q4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_Q5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OQ5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="32" max="32767" attributes="0"/>
+                  <Component id="B_Objectif" min="-2" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="Lb_Q1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="            "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_Q2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="         "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_Q3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="           "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_Q4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="           "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_Q5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="          "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OQ1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ahah"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OQ2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ohoh"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OQ3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="hihi"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OQ4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="huhu"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OQ5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="momo"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="B_Objectif">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Gestion Objectifs"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_ObjectifActionPerformed"/>
+          </Events>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="Lb_H1" alignment="0" pref="210" max="32767" attributes="0"/>
+                      <Component id="Lb_H2" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Lb_H3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Lb_H4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="Lb_H5" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="Check_OH1" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH2" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH4" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH5" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="25" max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_H1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_H2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_H3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_H4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH4" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="Lb_H5" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="Check_OH5" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="Lb_H1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="     "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_H2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="    "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_H3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="   "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_H4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="   "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Lb_H5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="   "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OH1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="oh"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OH2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ah"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OH3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="uh"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OH4">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="yh"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="Check_OH5">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="iih"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JLabel" name="Lb_Maindescr">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="ff" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="24" style="1"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Bienvenue"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="B_Profil">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Mon Profil"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_ProfilActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="B_retour_acc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="D&#xe9;connexion"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_retour_accActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="B_Aide">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Aide"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B_AideActionPerformed"/>
+      </Events>
+    </Component>
+  </SubComponents>
 </Form>
