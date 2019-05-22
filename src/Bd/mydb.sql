@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 22 Mai 2019 à 15:31
+-- Généré le :  Mer 22 Mai 2019 à 17:51
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -68,6 +68,18 @@ CREATE TABLE IF NOT EXISTS `poids` (
   PRIMARY KEY (`id_Poids`),
   KEY `fk_Poids_User1_idx` (`User_id_User`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- Déclencheurs `poids`
+--
+DROP TRIGGER IF EXISTS `ajoutHistoriquePoids`;
+DELIMITER //
+CREATE TRIGGER `ajoutHistoriquePoids` BEFORE UPDATE ON `poids`
+ FOR EACH ROW Begin
+Insert into poids(val_Poids) values (old.val_Poids);
+End
+//
+DELIMITER ;
 
 -- --------------------------------------------------------
 
