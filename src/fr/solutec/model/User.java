@@ -34,6 +34,14 @@ public class User {
         this.poids = poids;
         this.taille = taille;
     }
+
+    public double getPoids() {
+        return poids;
+    }
+
+    public void setPoids(double poids) {
+        this.poids = poids;
+    }
     
     
     
@@ -45,7 +53,7 @@ public class User {
         this.prenom = prenom;
         this.mail = mail;
         this.mdp = mdp;
-        this.Poid = Poid;
+        this.poids = poids;
         this.taille = taille;
     }
 
@@ -97,14 +105,7 @@ public class User {
         this.mdp = mdp;
     }
 
-    public double getPoid() {
-        return Poid;
-    }
-
-    public void setPoid(double Poid) {
-        this.Poid = Poid;
-    }
-
+   
     public double getTaille() {
         return taille;
     }
