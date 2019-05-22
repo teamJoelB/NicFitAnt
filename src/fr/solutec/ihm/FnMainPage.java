@@ -27,22 +27,303 @@ public class FnMainPage extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        P_fond_quotidien = new javax.swing.JPanel();
+        Lb_Q1 = new javax.swing.JLabel();
+        Lb_Q2 = new javax.swing.JLabel();
+        Lb_Q3 = new javax.swing.JLabel();
+        Lb_Q4 = new javax.swing.JLabel();
+        Lb_Q5 = new javax.swing.JLabel();
+        Check_OQ1 = new javax.swing.JLabel();
+        Check_OQ2 = new javax.swing.JLabel();
+        Check_OQ3 = new javax.swing.JLabel();
+        Check_OQ4 = new javax.swing.JLabel();
+        Check_OQ5 = new javax.swing.JLabel();
+        B_Objectif = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        Lb_H1 = new javax.swing.JLabel();
+        Lb_H2 = new javax.swing.JLabel();
+        Lb_H3 = new javax.swing.JLabel();
+        Lb_H4 = new javax.swing.JLabel();
+        Lb_H5 = new javax.swing.JLabel();
+        Check_OH1 = new javax.swing.JLabel();
+        Check_OH2 = new javax.swing.JLabel();
+        Check_OH3 = new javax.swing.JLabel();
+        Check_OH4 = new javax.swing.JLabel();
+        Check_OH5 = new javax.swing.JLabel();
+        Lb_Maindescr = new javax.swing.JLabel();
+        B_Profil = new javax.swing.JButton();
+        B_retour_acc = new javax.swing.JButton();
+        B_Aide = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Lb_Q1.setText("            ");
+
+        Lb_Q2.setText("         ");
+
+        Lb_Q3.setText("           ");
+
+        Lb_Q4.setText("           ");
+
+        Lb_Q5.setText("          ");
+
+        Check_OQ1.setText("ahah");
+
+        Check_OQ2.setText("ohoh");
+
+        Check_OQ3.setText("hihi");
+
+        Check_OQ4.setText("huhu");
+
+        Check_OQ5.setText("momo");
+
+        B_Objectif.setText("Gestion Objectifs");
+        B_Objectif.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ObjectifActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout P_fond_quotidienLayout = new javax.swing.GroupLayout(P_fond_quotidien);
+        P_fond_quotidien.setLayout(P_fond_quotidienLayout);
+        P_fond_quotidienLayout.setHorizontalGroup(
+            P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_fond_quotidienLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Lb_Q5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lb_Q4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lb_Q3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lb_Q2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lb_Q1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Check_OQ1)
+                    .addComponent(Check_OQ2)
+                    .addComponent(Check_OQ3)
+                    .addComponent(Check_OQ4)
+                    .addComponent(Check_OQ5))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_fond_quotidienLayout.createSequentialGroup()
+                .addContainerGap(246, Short.MAX_VALUE)
+                .addComponent(B_Objectif)
+                .addContainerGap())
+        );
+        P_fond_quotidienLayout.setVerticalGroup(
+            P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_fond_quotidienLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_Q1)
+                    .addComponent(Check_OQ1))
+                .addGap(18, 18, 18)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_Q2)
+                    .addComponent(Check_OQ2))
+                .addGap(18, 18, 18)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_Q3)
+                    .addComponent(Check_OQ3))
+                .addGap(18, 18, 18)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_Q4)
+                    .addComponent(Check_OQ4))
+                .addGap(18, 18, 18)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_Q5)
+                    .addComponent(Check_OQ5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addComponent(B_Objectif))
+        );
+
+        Lb_H1.setText("     ");
+
+        Lb_H2.setText("    ");
+
+        Lb_H3.setText("   ");
+
+        Lb_H4.setText("   ");
+
+        Lb_H5.setText("   ");
+
+        Check_OH1.setText("oh");
+
+        Check_OH2.setText("ah");
+
+        Check_OH3.setText("uh");
+
+        Check_OH4.setText("yh");
+
+        Check_OH5.setText("iih");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Lb_H1, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
+                    .addComponent(Lb_H2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lb_H3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lb_H4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(Lb_H5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Check_OH1)
+                    .addComponent(Check_OH2)
+                    .addComponent(Check_OH3)
+                    .addComponent(Check_OH4)
+                    .addComponent(Check_OH5))
+                .addContainerGap(25, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_H1)
+                    .addComponent(Check_OH1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_H2)
+                    .addComponent(Check_OH2))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_H3)
+                    .addComponent(Check_OH3))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_H4)
+                    .addComponent(Check_OH4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_H5)
+                    .addComponent(Check_OH5))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Lb_Maindescr.setBackground(new java.awt.Color(255, 0, 0));
+        Lb_Maindescr.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        Lb_Maindescr.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Lb_Maindescr.setText("Bienvenue");
+
+        B_Profil.setText("Mon Profil");
+        B_Profil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ProfilActionPerformed(evt);
+            }
+        });
+
+        B_retour_acc.setText("Déconnexion");
+        B_retour_acc.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_retour_accActionPerformed(evt);
+            }
+        });
+
+        B_Aide.setText("Aide");
+        B_Aide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_AideActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(P_fond_quotidien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(B_Profil)
+                        .addGap(112, 112, 112)
+                        .addComponent(Lb_Maindescr, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(B_Aide)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(B_retour_acc)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Lb_Maindescr, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(B_Profil)
+                    .addComponent(B_retour_acc)
+                    .addComponent(B_Aide))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(P_fond_quotidien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(33, 33, 33))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
+    
+    // acces gestion objectif
+    private void B_ObjectifActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ObjectifActionPerformed
+        
+        
+       FnObjectif Obj = new FnObjectif();
+       this.setVisible(false);
+       Obj.setVisible(true);
+  
+    }//GEN-LAST:event_B_ObjectifActionPerformed
+
+    
+    // Acces page d'aide
+    private void B_AideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_AideActionPerformed
+        
+       FnAide AID = new FnAide();
+       this.setVisible(false);
+       AID.setVisible(true);
+   
+    }//GEN-LAST:event_B_AideActionPerformed
+
+    
+    
+    // deconexion retour acceuil
+    private void B_retour_accActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_retour_accActionPerformed
+   
+       FnAcceuil Acc = new FnAcceuil();
+       this.setVisible(false);
+       Acc.setVisible(true);
+
+    }//GEN-LAST:event_B_retour_accActionPerformed
+
+    
+    
+    
+    // acces a la page profil
+    private void B_ProfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ProfilActionPerformed
+        
+        
+       FnProfil prof = new FnProfil();
+       this.setVisible(false);
+       prof.setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_B_ProfilActionPerformed
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -79,5 +360,32 @@ public class FnMainPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_Aide;
+    private javax.swing.JButton B_Objectif;
+    private javax.swing.JButton B_Profil;
+    private javax.swing.JButton B_retour_acc;
+    private javax.swing.JLabel Check_OH1;
+    private javax.swing.JLabel Check_OH2;
+    private javax.swing.JLabel Check_OH3;
+    private javax.swing.JLabel Check_OH4;
+    private javax.swing.JLabel Check_OH5;
+    private javax.swing.JLabel Check_OQ1;
+    private javax.swing.JLabel Check_OQ2;
+    private javax.swing.JLabel Check_OQ3;
+    private javax.swing.JLabel Check_OQ4;
+    private javax.swing.JLabel Check_OQ5;
+    private javax.swing.JLabel Lb_H1;
+    private javax.swing.JLabel Lb_H2;
+    private javax.swing.JLabel Lb_H3;
+    private javax.swing.JLabel Lb_H4;
+    private javax.swing.JLabel Lb_H5;
+    private javax.swing.JLabel Lb_Maindescr;
+    private javax.swing.JLabel Lb_Q1;
+    private javax.swing.JLabel Lb_Q2;
+    private javax.swing.JLabel Lb_Q3;
+    private javax.swing.JLabel Lb_Q4;
+    private javax.swing.JLabel Lb_Q5;
+    private javax.swing.JPanel P_fond_quotidien;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
