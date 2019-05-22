@@ -13,16 +13,17 @@ import java.sql.Date;
  */
 public class Poids {
     private int id_Poids ;
-    private String val_Poids;
+    private double val_Poids;
     private Date date_Modification;
+    private User user;
 
-    public Poids(int id_Poids, String val_Poids, Date date_Modification) {
+    public Poids(int id_Poids, double val_Poids, Date date_Modification, User user) {
         this.id_Poids = id_Poids;
         this.val_Poids = val_Poids;
         this.date_Modification = date_Modification;
+        this.user = user;
     }
 
-   
     
     public Poids(){}
 
@@ -34,11 +35,11 @@ public class Poids {
         this.id_Poids = id_Poids;
     }
 
-    public String getVal_Poids() {
+    public double getVal_Poids() {
         return val_Poids;
     }
 
-    public void setVal_Poids(String val_Poids) {
+    public void setVal_Poids(double val_Poids) {
         this.val_Poids = val_Poids;
     }
 
@@ -48,6 +49,14 @@ public class Poids {
 
     public void setDate_Modification(Date date_Modification) {
         this.date_Modification = date_Modification;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
     
 
