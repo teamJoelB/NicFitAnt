@@ -14,55 +14,68 @@ public class User {
  
    
     
-    private int id ;
+    private int id_User ;
     private String login;
     private String nom ;
     private String prenom ;
     private String mail;
     private String mdp ; 
-    private double poids;
     private double taille;
-    
-   
-    public User( String login, String nom, String prenom, String mail,String mdp) {
-     
+    private int age;
+    private String sexe; 
+
+    public User(int id_User, String login, String nom, String prenom, String mail, String mdp, double taille, int age, String sexe) {
+        this.id_User = id_User;
         this.login = login;
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;
         this.mdp = mdp;
-        this.poids = poids;
         this.taille = taille;
+        this.age = age;
+        this.sexe = sexe;
     }
 
-    public double getPoids() {
-        return poids;
+    public int getAge() {
+        return age;
     }
 
-    public void setPoids(double poids) {
-        this.poids = poids;
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
     }
     
+   
+    
+   
+
+ 
     
     
    
-       public User(int id, String login, String nom, String prenom, String mail, String mdp, double Poid, double taille) {
-        this.id = id;
+       public User(int id_User, String login, String nom, String prenom, String mail, String mdp, double taille) {
+        this.id_User = id_User;
         this.login = login;
         this.nom = nom;
         this.prenom = prenom;
         this.mail = mail;
         this.mdp = mdp;
-        this.poids = poids;
         this.taille = taille;
     }
 
     public int getId() {
-        return id;
+        return id_User;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id_User) {
+        this.id_User = id_User;
     }
 
     public String getLogin() {
