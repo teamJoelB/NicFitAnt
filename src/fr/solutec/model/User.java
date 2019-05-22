@@ -35,6 +35,8 @@ public class User {
         this.age = age;
         this.sexe = sexe;
     }
+    
+    public User(){}
 
     public int getAge() {
         return age;
