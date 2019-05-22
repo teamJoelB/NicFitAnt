@@ -27,14 +27,22 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="Pa_fond2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jButton1" min="-2" pref="100" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="Pa_fond2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jButton1" min="-2" pref="100" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="Pa_fond1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <Component id="Pa_fond1" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="249" max="-2" attributes="0"/>
+                      <Component id="Lb_deconnexion" min="-2" pref="490" max="-2" attributes="0"/>
+                  </Group>
               </Group>
               <EmptySpace pref="120" max="32767" attributes="0"/>
               <Component id="Lb_immage" max="32767" attributes="0"/>
@@ -52,7 +60,9 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
               <Component id="Pa_fond1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="161" max="32767" attributes="0"/>
+              <EmptySpace pref="99" max="32767" attributes="0"/>
+              <Component id="Lb_deconnexion" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <Component id="Pa_fond2" min="-2" max="-2" attributes="0"/>
@@ -222,5 +232,7 @@
         </Component>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="Lb_deconnexion">
+    </Component>
   </SubComponents>
 </Form>

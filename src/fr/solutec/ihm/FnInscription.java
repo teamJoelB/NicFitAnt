@@ -27,22 +27,230 @@ public class FnInscription extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel3 = new javax.swing.JLabel();
+        P_fond3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        T_Login = new javax.swing.JTextField();
+        T_Nom = new javax.swing.JTextField();
+        T_Prenom = new javax.swing.JTextField();
+        T_Mail = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        T_Taille = new javax.swing.JTextField();
+        T_Poid = new javax.swing.JTextField();
+        CB_Genre = new javax.swing.JComboBox<>();
+        B_Retour = new javax.swing.JButton();
+        B_Valid_Inscri = new javax.swing.JButton();
+
+        jLabel3.setText("jLabel3");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        P_fond3.setBackground(new java.awt.Color(255, 0, 51));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Formulaire d'inscription :");
+
+        javax.swing.GroupLayout P_fond3Layout = new javax.swing.GroupLayout(P_fond3);
+        P_fond3.setLayout(P_fond3Layout);
+        P_fond3Layout.setHorizontalGroup(
+            P_fond3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_fond3Layout.createSequentialGroup()
+                .addGap(141, 141, 141)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 321, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(162, Short.MAX_VALUE))
+        );
+        P_fond3Layout.setVerticalGroup(
+            P_fond3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(P_fond3Layout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel1)
+                .addContainerGap(35, Short.MAX_VALUE))
+        );
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Login :");
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Nom :");
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Prenom :");
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Mail :");
+
+        jLabel7.setText("Genre");
+
+        T_Login.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_LoginActionPerformed(evt);
+            }
+        });
+
+        T_Nom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_NomActionPerformed(evt);
+            }
+        });
+
+        T_Mail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_MailActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Taille :");
+
+        jLabel9.setText("Poids actuel :");
+
+        CB_Genre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Masculin", "Feminin", " " }));
+
+        B_Retour.setText("Abandon");
+        B_Retour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_RetourActionPerformed(evt);
+            }
+        });
+
+        B_Valid_Inscri.setText("Enregistrer");
+        B_Valid_Inscri.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_Valid_InscriActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(P_fond3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(59, 59, 59)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(B_Retour)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(B_Valid_Inscri))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLabel7)
+                                    .addGap(159, 159, 159))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel5)
+                                        .addComponent(jLabel6))
+                                    .addGap(142, 142, 142)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(157, 157, 157))
+                            .addComponent(jLabel9))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(T_Login, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
+                            .addComponent(T_Nom)
+                            .addComponent(T_Prenom)
+                            .addComponent(T_Mail)
+                            .addComponent(T_Taille)
+                            .addComponent(T_Poid)
+                            .addComponent(CB_Genre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(P_fond3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(44, 44, 44)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(T_Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(T_Nom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(T_Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(T_Mail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(CB_Genre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(T_Taille, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(T_Poid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(B_Retour)
+                    .addComponent(B_Valid_Inscri))
+                .addGap(38, 38, 38))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void T_NomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_NomActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_NomActionPerformed
+
+    private void T_MailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_MailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_MailActionPerformed
+
+    private void T_LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_LoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_LoginActionPerformed
+
+    
+    
+    // Retour acceuil
+    
+    private void B_RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_RetourActionPerformed
+        
+        
+            FnAcceuil Acceuil = new FnAcceuil();
+            this.setVisible(false);
+            Acceuil.setVisible(true);
+        
+        
+    }//GEN-LAST:event_B_RetourActionPerformed
+
+    
+    
+    // validation et enregistrement variables puis Retour acceuil
+    
+    private void B_Valid_InscriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Valid_InscriActionPerformed
+        
+        FnAcceuil Acceuil = new FnAcceuil();
+            this.setVisible(false);
+            Acceuil.setVisible(true);
+        
+    }//GEN-LAST:event_B_Valid_InscriActionPerformed
+
+    
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -79,5 +287,24 @@ public class FnInscription extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton B_Retour;
+    private javax.swing.JButton B_Valid_Inscri;
+    private javax.swing.JComboBox<String> CB_Genre;
+    private javax.swing.JPanel P_fond3;
+    private javax.swing.JTextField T_Login;
+    private javax.swing.JTextField T_Mail;
+    private javax.swing.JTextField T_Nom;
+    private javax.swing.JTextField T_Poid;
+    private javax.swing.JTextField T_Prenom;
+    private javax.swing.JTextField T_Taille;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
