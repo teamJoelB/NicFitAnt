@@ -5,7 +5,9 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.PoidsDao;
 import fr.solutec.dao.UserDao;
+import fr.solutec.model.Poids;
 import fr.solutec.model.User;
 import javax.swing.JOptionPane;
 
@@ -136,7 +138,6 @@ public class FnInscription extends javax.swing.JFrame {
 
         jLabel10.setText("Mot de passe :");
 
-        T_Mdp.setText("   ");
         T_Mdp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 T_MdpActionPerformed(evt);
@@ -224,11 +225,11 @@ public class FnInscription extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(T_Poid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(T_Mdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(10, 10, 10)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
@@ -281,6 +282,9 @@ public class FnInscription extends javax.swing.JFrame {
     private double taille;
     private int age;
     private String sexe; 
+    private double poids;
+    
+    
     
     // validation et enregistrement variables puis Retour acceuil
     
@@ -294,7 +298,6 @@ public class FnInscription extends javax.swing.JFrame {
         Double taille = Double.parseDouble( T_Taille.getText());
         int age = Integer.parseInt(T_Age.getText());
         String sexe = CB_Genre.getSelectedItem().toString();
-        
   
         
          
@@ -308,7 +311,7 @@ public class FnInscription extends javax.swing.JFrame {
         user.setAge(age);
         user.setSexe(sexe);
         
-        
+
         
         
         try {

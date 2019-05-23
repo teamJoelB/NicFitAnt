@@ -6,7 +6,6 @@
 package fr.solutec.dao;
 
 import fr.solutec.model.Poids;
-import fr.solutec.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -22,11 +21,12 @@ import java.sql.SQLException;
 public class PoidsDao {
     
         public static void insert_Poid(Poids p) throws SQLException{
-        String sql  ="INSERT INTO poids (val_Poids) VALUES (?)";
+        String sql  ="INSERT INTO poids (val_Poids, User_id_User) VALUES (?, ?)";
         Connection connexion = ConnectBd.getConnection(); 
         
         PreparedStatement requete = connexion.prepareStatement(sql);
         requete.setDouble(1, p.getVal_Poids());
+        requete.setInt(2, p.getUser().getId());
  
        
         requete.execute();
