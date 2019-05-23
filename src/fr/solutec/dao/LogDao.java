@@ -38,11 +38,11 @@ public class LogDao {
     // Compter nombre connexion
     
     public static int nombre_Connexion(Log l) throws SQLException{
-        String sql= "SELECT Count(User_id_User) as lignes FROM log WHERE User_id_User = ? GROUP BY User_id_User";
+        String sql= "SELECT Count(User_id_User) as lignes FROM log WHERE User_id_User =" + User.id_Actif + " GROUP BY User_id_User";
         Connection connexion = ConnectBd.getConnection(); 
         
         PreparedStatement requete = connexion.prepareStatement(sql);
-        requete.setInt(1, l.getUser().getId());
+//        requete.setInt(1, l.getUser().getId());
         
         ResultSet rs = requete.executeQuery();
         
