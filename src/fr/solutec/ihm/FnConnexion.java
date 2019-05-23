@@ -5,7 +5,9 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.LogDao;
 import fr.solutec.dao.UserDao;
+import fr.solutec.model.Log;
 import fr.solutec.model.User;
 import static fr.solutec.model.User.id_Actif;
 import javax.swing.JOptionPane;
@@ -137,61 +139,85 @@ public class FnConnexion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_Pw_connexionActionPerformed
 
-    
-    
-    
-    
-    
     // gestion connexion boutton architecture en commentaire a recuperer le nombre de connexion
-    
+
     private void B_ConnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ConnexionActionPerformed
-        
-        
-       String login = T_Login.getText();
-       String mdp =  Pw_connexion.getText();
-        
-      try {
-          User user = UserDao.get_By_Login_Pass(login, mdp);
-            if(user != null){
-              User.id_Actif = user.getId();
-              FnMainPage M_p = new FnMainPage();
-              this.setVisible(false);
-              M_p.setVisible(true);  
-     //         if ()
-              
+
+        String login = T_Login.getText();
+        String mdp = Pw_connexion.getText();
+
+        try {
+            User user = UserDao.get_By_Login_Pass(login, mdp);
+            if (user != null) {
+                User.id_Actif = user.getId();
+                FnMainPage M_p = new FnMainPage();
+                this.setVisible(false);
+                M_p.setVisible(true);
+
+                User user_Connecte = new User();
+                user_Connecte.setId(User.id_Actif);
+
+                Log log_Connecte = new Log();
+                log_Connecte.setUser(user_Connecte);
+
+                try {
+
+                    int i = LogDao.nombre_Connexion(log_Connecte);
+
+                    if (LogDao.nombre_Connexion(log_Connecte) < 1) {
+                        FnAide Aide = new FnAide();
+                        Aide.setVisible(true);
+                    }
+
+                } catch (Exception e) {
+                    JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
+                }
+
+                //        
+            } else {
+                Lb_erreur.setText("Mot de passe ou login erronés !");
             }
-           else {
-             Lb_erreur.setText("Mot de passe ou login erronés !"); 
-           }
-       } catch (Exception e) {
+        } catch (Exception e) {
             JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
             FnAcceuil Acceuil = new FnAcceuil();
             this.setVisible(false);
             Acceuil.setVisible(true);
         }
-        
-        
-      
-        
+
+        // afficher aide si première connexion
+        User user_Connecte = new User();
+        user_Connecte.setId(id_Actif);
+
+        Log log_Connecte = new Log();
+        log_Connecte.setUser(user_Connecte);
+
+        try {
+
+            int i = LogDao.nombre_Connexion(log_Connecte);
+
+            if (i <= 1) {
+                FnAide Aide = new FnAide();
+                Aide.setVisible(true);
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
+        }
+
+
     }//GEN-LAST:event_B_ConnexionActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         FnAcceuil Acceuil = new FnAcceuil();
-            this.setVisible(false);
-            Acceuil.setVisible(true);
-        
-        
+        this.setVisible(false);
+        Acceuil.setVisible(true);
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
-    
-    
-    
-    
-    
     /**
-   
-     * 
+     *
+     *
      * @param args the command line arguments
      */
     public static void main(String args[]) {

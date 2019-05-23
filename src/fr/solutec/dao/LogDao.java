@@ -47,11 +47,11 @@ public class LogDao {
         ResultSet rs = requete.executeQuery();
         
         
-        int lignes = 0;
-        rs.next();
-        lignes = rs.getInt("lignes");
+       int lignes = 0;
+       if( rs.next()){
+           lignes = rs.getInt("lignes");
+       }
         return lignes;
-        
      }
         
         
@@ -76,7 +76,6 @@ public class LogDao {
         ResultSet rs = requete.executeQuery();
         if (rs.next()){
             l = new Log();
-            l.setId_Log(rs.getInt("id_Log"));
             l.setDate_Deconnexion(rs.getDate("date_Deconnexion"));
 //            l.(rs.getId("User_id_User"));
             

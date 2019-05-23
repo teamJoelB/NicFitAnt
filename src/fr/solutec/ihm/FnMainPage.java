@@ -6,6 +6,7 @@
 package fr.solutec.ihm;
 
 import fr.solutec.dao.LogDao;
+import static fr.solutec.dao.LogDao.derniere_Connexion;
 import fr.solutec.dao.ObjectifDao;
 import fr.solutec.model.Log;
 import fr.solutec.model.Objectif;
@@ -205,14 +206,15 @@ public class FnMainPage extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Lb_Maindescr, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(B_Profil)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(11, 11, 11)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(B_Aide)
-                            .addComponent(B_retour_acc))))
+                            .addComponent(B_retour_acc)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Lb_Maindescr, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(B_Profil)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -302,29 +304,11 @@ public class FnMainPage extends javax.swing.JFrame {
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 
-// afficher aide si première connexion
+
+        
+//T_der_con = getSelectedItem(derniere_Connexion(log_Connecte)).toString());
 
 
-User user_Connecte = new User ();
-user_Connecte.setId(id_Actif);
-
-Log log_Connecte = new Log();
-log_Connecte.setUser(user_Connecte);
-
-
-try{
-
-int i = LogDao.nombre_Connexion(log_Connecte);
-
-if(i<=1){
-FnAide Aide= new FnAide();
-Aide.setVisible(true);
-}
-
-
-} catch (Exception e) {
-JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
-}
         
         
         
