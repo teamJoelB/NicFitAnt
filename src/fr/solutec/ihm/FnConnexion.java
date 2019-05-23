@@ -142,7 +142,7 @@ public class FnConnexion extends javax.swing.JFrame {
     
     
     
-    // gestion connexion boutton architecture en commentaire
+    // gestion connexion boutton architecture en commentaire a recuperer le nombre de connexion
     
     private void B_ConnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ConnexionActionPerformed
         
@@ -157,6 +157,8 @@ public class FnConnexion extends javax.swing.JFrame {
               FnMainPage M_p = new FnMainPage();
               this.setVisible(false);
               M_p.setVisible(true);  
+     //         if ()
+              
             }
            else {
              Lb_erreur.setText("Mot de passe ou login erronés !"); 

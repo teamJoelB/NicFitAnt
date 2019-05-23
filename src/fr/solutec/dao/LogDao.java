@@ -6,6 +6,7 @@
 package fr.solutec.dao;
 
 import fr.solutec.model.Log;
+import fr.solutec.model.Poids;
 import fr.solutec.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -19,7 +20,21 @@ import java.util.Date;
  */
 public class LogDao {
 
-
+    //Insérer ligne log
+    
+    public static void insert_Log(Log l) throws SQLException{
+        String sql  ="INSERT INTO log (date_Deconnexion, User_id_User) VALUES (?, ?)";
+        Connection connexion = ConnectBd.getConnection(); 
+        
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setDate(1, l.getDate_Deconnexion());
+        requete.setInt(2, l.getUser().getId());
+ 
+       
+        requete.execute();
+           
+    }
+    
     
     //Récupérer information dernière connexion (Date, heure)
     

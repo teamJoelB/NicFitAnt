@@ -5,6 +5,7 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.ObjectifDao;
 import static fr.solutec.ihm.FnAcceuil.main;
 import static fr.solutec.ihm.FnAide.main;
 import static fr.solutec.ihm.FnInscription.main;
@@ -13,6 +14,7 @@ import fr.solutec.model.Objectif;
 import fr.solutec.model.User;
 import fr.solutec.main.Principal;
 import static fr.solutec.model.User.id_Actif;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -50,6 +52,7 @@ public class FnObjectif extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         T_ValMax = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
+        T_Me = new javax.swing.JLabel();
 
         jButton2.setText("jButton2");
 
@@ -99,6 +102,8 @@ public class FnObjectif extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Dialog", 1, 8)); // NOI18N
         jLabel6.setText("Attention la valeur de l'objectif doit etre représentée par un entier ");
 
+        T_Me.setText("Objectif ajouté");
+
         javax.swing.GroupLayout Pa_nv_objLayout = new javax.swing.GroupLayout(Pa_nv_obj);
         Pa_nv_obj.setLayout(Pa_nv_objLayout);
         Pa_nv_objLayout.setHorizontalGroup(
@@ -121,12 +126,15 @@ public class FnObjectif extends javax.swing.JFrame {
                                     .addComponent(jLabel5))
                                 .addGap(39, 39, 39)
                                 .addGroup(Pa_nv_objLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(Pa_nv_objLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(CB_Categorie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(T_Descri, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                                        .addComponent(T_ValMax))
-                                    .addComponent(jLabel6))))
-                        .addGap(0, 231, Short.MAX_VALUE)))
+                                    .addComponent(jLabel6)
+                                    .addGroup(Pa_nv_objLayout.createSequentialGroup()
+                                        .addGroup(Pa_nv_objLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(CB_Categorie, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(T_Descri, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
+                                            .addComponent(T_ValMax))
+                                        .addGap(78, 78, 78)
+                                        .addComponent(T_Me, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addGap(0, 46, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         Pa_nv_objLayout.setVerticalGroup(
@@ -134,10 +142,15 @@ public class FnObjectif extends javax.swing.JFrame {
             .addGroup(Pa_nv_objLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Pa_nv_objLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(T_Descri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                .addGroup(Pa_nv_objLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pa_nv_objLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(Pa_nv_objLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(T_Descri, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3)))
+                    .addGroup(Pa_nv_objLayout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(T_Me)))
                 .addGap(26, 26, 26)
                 .addGroup(Pa_nv_objLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4)
@@ -224,7 +237,17 @@ public class FnObjectif extends javax.swing.JFrame {
         obj.setValeur_Actuelle(valactu);
         obj.setUser(u);
   
-                
+        try {
+            ObjectifDao.insert_Obj( obj);
+            T_Me.setVisible(true);
+        } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
+            FnAcceuil Acceuil = new FnAcceuil();
+            this.setVisible(false);
+            Acceuil.setVisible(true);
+            
+        }
+              
       
 
 
@@ -270,6 +293,7 @@ public class FnObjectif extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> CB_Categorie;
     private javax.swing.JPanel Pa_nv_obj;
     private javax.swing.JTextField T_Descri;
+    private javax.swing.JLabel T_Me;
     private javax.swing.JTextField T_ValMax;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
