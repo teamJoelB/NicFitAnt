@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 22 Mai 2019 à 17:51
+-- Généré le :  Jeu 23 Mai 2019 à 09:45
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -98,7 +98,14 @@ CREATE TABLE IF NOT EXISTS `user` (
   `login` varchar(100) NOT NULL,
   `mdp` varchar(100) NOT NULL,
   PRIMARY KEY (`id_User`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Contenu de la table `user`
+--
+
+INSERT INTO `user` (`id_User`, `nom`, `prenom`, `age`, `sexe`, `taille`, `mail`, `login`, `mdp`) VALUES
+(1, 'test', 'test', 10, '', NULL, '', 'test', 'test');
 
 --
 -- Contraintes pour les tables exportées
