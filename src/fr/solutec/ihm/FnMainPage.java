@@ -8,12 +8,15 @@ package fr.solutec.ihm;
 import fr.solutec.dao.LogDao;
 import fr.solutec.dao.ObjectifDao;
 import fr.solutec.model.Log;
+import fr.solutec.model.Objectif;
 import fr.solutec.model.User;
 import static fr.solutec.model.User.id_Actif;
 import java.util.Calendar;
 
 import java.sql.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -49,6 +52,8 @@ public class FnMainPage extends javax.swing.JFrame {
         Check_OQ4 = new javax.swing.JLabel();
         Check_OQ5 = new javax.swing.JLabel();
         B_Objectif = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Table_Obj = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         Lb_H1 = new javax.swing.JLabel();
         Lb_H2 = new javax.swing.JLabel();
@@ -66,6 +71,11 @@ public class FnMainPage extends javax.swing.JFrame {
         B_Aide = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         Lb_Q1.setText("            ");
 
@@ -94,29 +104,48 @@ public class FnMainPage extends javax.swing.JFrame {
             }
         });
 
+        Table_Obj.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(Table_Obj);
+
         javax.swing.GroupLayout P_fond_quotidienLayout = new javax.swing.GroupLayout(P_fond_quotidien);
         P_fond_quotidien.setLayout(P_fond_quotidienLayout);
         P_fond_quotidienLayout.setHorizontalGroup(
             P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_fond_quotidienLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Lb_Q5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Lb_Q4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Lb_Q3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Lb_Q2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(Lb_Q1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
-                .addGap(32, 32, 32)
-                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Check_OQ1)
-                    .addComponent(Check_OQ2)
-                    .addComponent(Check_OQ3)
-                    .addComponent(Check_OQ4)
-                    .addComponent(Check_OQ5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_fond_quotidienLayout.createSequentialGroup()
-                .addContainerGap(246, Short.MAX_VALUE)
-                .addComponent(B_Objectif)
+                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, P_fond_quotidienLayout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(B_Objectif))
+                    .addGroup(P_fond_quotidienLayout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(P_fond_quotidienLayout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(P_fond_quotidienLayout.createSequentialGroup()
+                                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Lb_Q5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Lb_Q4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Lb_Q3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Lb_Q2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(Lb_Q1, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE))
+                                .addGap(465, 465, 465)
+                                .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Check_OQ1)
+                                    .addComponent(Check_OQ2)
+                                    .addComponent(Check_OQ3)
+                                    .addComponent(Check_OQ4)
+                                    .addComponent(Check_OQ5))))))
                 .addContainerGap())
         );
         P_fond_quotidienLayout.setVerticalGroup(
@@ -142,7 +171,9 @@ public class FnMainPage extends javax.swing.JFrame {
                 .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lb_Q5)
                     .addComponent(Check_OQ5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addComponent(B_Objectif))
         );
 
@@ -270,7 +301,7 @@ public class FnMainPage extends javax.swing.JFrame {
                     .addComponent(B_Profil)
                     .addComponent(B_retour_acc)
                     .addComponent(B_Aide))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(P_fond_quotidien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -355,6 +386,44 @@ public class FnMainPage extends javax.swing.JFrame {
     
     
     
+    
+    
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        
+        // afficher liste objectif
+         DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("description");
+            model.addColumn("Objectif");
+            model.addColumn("Executé");
+           
+        
+        
+        try {
+            List<Objectif> objectifs2 = ObjectifDao.getUserObjectif();
+            
+            for (Objectif objectif : objectifs2) {
+                    model.addRow(new Object[] {
+                    objectif.getDescription(),
+                    objectif.getValeur_Max(),
+                    objectif.getValeur_Actuelle(),
+                
+                });
+                Table_Obj.setModel(model);
+                
+                
+            }
+            
+        } catch (Exception e) { JOptionPane.showMessageDialog(rootPane, e.getMessage());
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_formWindowOpened
+
+    
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -417,6 +486,8 @@ public class FnMainPage extends javax.swing.JFrame {
     private javax.swing.JLabel Lb_Q4;
     private javax.swing.JLabel Lb_Q5;
     private javax.swing.JPanel P_fond_quotidien;
+    private javax.swing.JTable Table_Obj;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
