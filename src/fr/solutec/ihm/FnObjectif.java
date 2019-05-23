@@ -211,7 +211,7 @@ public class FnObjectif extends javax.swing.JFrame {
         int valactu = 0;
         
         User u = new User();
-        u.setId(id_Actif);
+       // u.setId(id_Actif);
         
         Objectif obj = new Objectif() ;
         obj.setDescription(descri);

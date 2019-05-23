@@ -58,7 +58,11 @@ public class Poids {
     public void setUser(User user) {
         this.user = user;
     }
+
     
+
+
+
 
     
     

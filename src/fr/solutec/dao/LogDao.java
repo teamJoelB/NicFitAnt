@@ -19,7 +19,9 @@ import java.util.Date;
  */
 public class LogDao {
 
-    private static User user;
+
+    
+    //Récupérer information dernière connexion (Date, heure)
     
     public static Log derniere_Connexion(Log l)throws SQLException{
         
@@ -35,6 +37,7 @@ public class LogDao {
             l = new Log();
             l.setId_Log(rs.getInt("id_Log"));
             l.setDate_Deconnexion(rs.getDate("date_Deconnexion"));
+//            l.(rs.getId("User_id_User"));
             
         }
    

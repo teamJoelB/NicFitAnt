@@ -14,7 +14,7 @@ import java.sql.Date;
 public class Log {
     
     
-     private int id_Log ;
+    private int id_Log ;
     private Date date_Deconnexion;
     private User user;
     
@@ -57,6 +57,8 @@ public class Log {
     public User getUser() {
         return user;
     }
+    
+
 
     public void setDate_Deconnexion(Date date_Deconnexion) {
         this.date_Deconnexion = date_Deconnexion;
