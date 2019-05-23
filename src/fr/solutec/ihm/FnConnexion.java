@@ -5,6 +5,10 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.UserDao;
+import fr.solutec.model.User;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Joel B
@@ -33,6 +37,8 @@ public class FnConnexion extends javax.swing.JFrame {
         T_Login = new javax.swing.JTextField();
         Pw_connexion = new javax.swing.JPasswordField();
         B_Connexion = new javax.swing.JButton();
+        Lb_erreur = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +66,16 @@ public class FnConnexion extends javax.swing.JFrame {
             }
         });
 
+        Lb_erreur.setBackground(new java.awt.Color(204, 0, 0));
+        Lb_erreur.setText(" ");
+
+        jButton1.setText("Retour");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,28 +83,40 @@ public class FnConnexion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(144, 144, 144)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(181, 181, 181)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(T_Login)
-                            .addComponent(Pw_connexion, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(B_Connexion)))
-                .addContainerGap(125, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(209, 209, 209)
+                                .addComponent(B_Connexion))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(64, 64, 64)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(38, 38, 38)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Lb_erreur, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(T_Login)
+                                        .addComponent(Pw_connexion, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jButton1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Lb_erreur)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(T_Login, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -96,7 +124,7 @@ public class FnConnexion extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(Pw_connexion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
                 .addComponent(B_Connexion)
                 .addGap(44, 44, 44))
         );
@@ -118,30 +146,38 @@ public class FnConnexion extends javax.swing.JFrame {
     private void B_ConnexionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ConnexionActionPerformed
         
         
-   //      String login =    .getText();
-   //     String mdp =    .getText();
+       String login = T_Login.getText();
+       String mdp =  Pw_connexion.getText();
         
-      //  try {
-       //     User user = UserDAO.getByLoginPass(login, mdp);
-        //    if(user != null){
+      try {
+          User user = UserDao.get_By_Login_Pass(login, mdp);
+            if(user != null){
               FnMainPage M_p = new FnMainPage();
               this.setVisible(false);
               M_p.setVisible(true);  
-        //    }
-        //    else {
-        //        Txt_retour.setText("non non non!"); 
-        //    }
-      //  } catch (Exception e) {
-      //      JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
-       //      FnAcceuil Acceuil = new FnAcceuil();
-        //      this.setVisible(false);
-        //      Acceuil.setVisible(true);
-      //  }
+            }
+           else {
+             Lb_erreur.setText("Mot de passe ou login erronés !"); 
+           }
+       } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
+            FnAcceuil Acceuil = new FnAcceuil();
+            this.setVisible(false);
+            Acceuil.setVisible(true);
+        }
         
         
       
         
     }//GEN-LAST:event_B_ConnexionActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        FnAcceuil Acceuil = new FnAcceuil();
+            this.setVisible(false);
+            Acceuil.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     
     
@@ -189,8 +225,10 @@ public class FnConnexion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton B_Connexion;
+    private javax.swing.JLabel Lb_erreur;
     private javax.swing.JPasswordField Pw_connexion;
     private javax.swing.JTextField T_Login;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
