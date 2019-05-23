@@ -18,7 +18,15 @@ import java.sql.SQLException;
 
 
   // Inscription (ajouter valeur poids dans classe Poids dans base de données)
+
+
+
+
+
 public class PoidsDao {
+    
+  
+    
     
         public static void insert_Poid(Poids p) throws SQLException{
         String sql  ="INSERT INTO poids (val_Poids, User_id_User) VALUES (?, ?)";

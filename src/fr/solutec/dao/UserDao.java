@@ -39,7 +39,7 @@ public class UserDao {
             u.setId(rs.getInt("id_User"));
             u.setNom(rs.getString("nom"));
             u.setPrenom(rs.getString("prenom"));
-             u.setAge(rs.getInt("age"));
+            u.setAge(rs.getInt("age"));
             u.setMail(rs.getString("mail"));  
             u.setLogin(rs.getString("login"));
             u.setMdp(rs.getString("mdp")); 
@@ -52,6 +52,8 @@ public class UserDao {
         
         return u;
 }
+    
+      
     
     // Inscription (ajouter User dans base de données)
     

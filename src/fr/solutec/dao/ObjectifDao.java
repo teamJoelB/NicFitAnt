@@ -6,6 +6,7 @@
 package fr.solutec.dao;
 
 import fr.solutec.model.Objectif;
+import fr.solutec.model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -85,13 +86,14 @@ public class ObjectifDao {
         
         public static List<Objectif> getUserObjectif() throws SQLException{
         
-            List<Objectif> Uobjectifs = new ArrayList<>();
-        Connection connexion = ConnectBd.getConnection(); 
+         List<Objectif> objectifs2 = new ArrayList<>();
+         Connection connexion = ConnectBd.getConnection(); 
         
-        String sql = "SELECT description, valeur_Max, valeur_Actuelle FROM objectif WHERE id_User=User_id_User";
+        String sql = "SELECT description, valeur_Max, valeur_Actuelle FROM objectif WHERE User_id_User = ?";
         
-        Statement requete = connexion.createStatement();
-        ResultSet rs = requete.executeQuery(sql);
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, User.id_Actif);
+        ResultSet rs = requete.executeQuery();
         
         while (rs.next()){
             Objectif o = new Objectif();
@@ -102,12 +104,11 @@ public class ObjectifDao {
             o.setValeur_Actuelle(rs.getInt("valeur_Actuelle")); 
 //            o.setEcheance(rs.getDate("echeance"));
             
-            Uobjectifs.add(o);
+            objectifs2.add(o);
         }
         
-        return Uobjectifs;
+        return objectifs2;
     }
-        
         
         
 }

@@ -151,7 +151,7 @@ public class FnMainPage extends javax.swing.JFrame {
         P_fond_quotidienLayout.setVerticalGroup(
             P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_fond_quotidienLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(46, 46, 46)
                 .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lb_Q1)
                     .addComponent(Check_OQ1))
@@ -399,15 +399,13 @@ public class FnMainPage extends javax.swing.JFrame {
         
         
         try {
-            List<Objectif> Uobjectif = ObjectifDao.getUserObjectif();
+            List<Objectif> objectifs2 = ObjectifDao.getUserObjectif();
             
-            for (Objectif objectif : Uobjectif) {
+            for (Objectif objectif : objectifs2) {
                     model.addRow(new Object[] {
-                    objectif .getDescription(),
-                    objectif .getValeur_Max(),
-                    objectif .getValeur_Actuelle(),
-                    
-                
+                    objectif.getDescription(),
+                    objectif.getValeur_Max(),
+                    objectif.getValeur_Actuelle(),
                 
                 });
                 Table_Obj.setModel(model);

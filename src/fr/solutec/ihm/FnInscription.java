@@ -298,7 +298,7 @@ public class FnInscription extends javax.swing.JFrame {
         Double taille = Double.parseDouble( T_Taille.getText());
         int age = Integer.parseInt(T_Age.getText());
         String sexe = CB_Genre.getSelectedItem().toString();
-  
+    
         
          
         User user =new User();
