@@ -7,6 +7,7 @@ package fr.solutec.ihm;
 
 import fr.solutec.dao.PoidsDao;
 import fr.solutec.dao.UserDao;
+import static fr.solutec.dao.UserDao.nombre_Inscrit;
 import fr.solutec.model.Poids;
 import fr.solutec.model.User;
 import javax.swing.JOptionPane;
@@ -298,6 +299,7 @@ public class FnInscription extends javax.swing.JFrame {
         Double taille = Double.parseDouble( T_Taille.getText());
         int age = Integer.parseInt(T_Age.getText());
         String sexe = CB_Genre.getSelectedItem().toString();
+        double poids = Double.parseDouble (T_Poid.getText());
     
         
          
@@ -312,11 +314,16 @@ public class FnInscription extends javax.swing.JFrame {
         user.setSexe(sexe);
         
 
+
         
         
         try {
             UserDao.insert_Us(user);
-            
+          User user1 =  UserDao.user_Inscrit(login, mdp);
+      Poids poids1 = new Poids();
+poids1.setVal_Poids(poids);
+poids1.setUser(user1);
+            PoidsDao.insert_Poid(poids1);
             this.setVisible(false);
             FnAcceuil Acceuil = new FnAcceuil();
             this.setVisible(false);

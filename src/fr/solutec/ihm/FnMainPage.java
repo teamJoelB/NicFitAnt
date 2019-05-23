@@ -301,6 +301,30 @@ public class FnMainPage extends javax.swing.JFrame {
     
     
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+
+// afficher aide si première connexion
+
+
+User user_Connecte = new User ();
+user_Connecte.setId(id_Actif);
+
+Log log_Connecte = new Log();
+log_Connecte.setUser(user_Connecte);
+
+
+try{
+
+int i = LogDao.nombre_Connexion(log_Connecte);
+
+if(i<=1){
+FnAide Aide= new FnAide();
+Aide.setVisible(true);
+}
+
+
+} catch (Exception e) {
+JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
+}
         
         
         
