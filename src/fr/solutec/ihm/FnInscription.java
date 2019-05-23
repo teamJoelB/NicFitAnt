@@ -272,16 +272,6 @@ public class FnInscription extends javax.swing.JFrame {
     
     
     
-    private int id_User ;
-    private String login;
-    private String nom ;
-    private String prenom ;
-    private String mail;
-    private String mdp ; 
-    private double taille;
-    private int age;
-    private String sexe; 
-    
     // validation et enregistrement variables puis Retour acceuil
     
     private void B_Valid_InscriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Valid_InscriActionPerformed
@@ -308,7 +298,7 @@ public class FnInscription extends javax.swing.JFrame {
         user.setAge(age);
         user.setSexe(sexe);
         
-        
+         
         
         
         try {
