@@ -11,7 +11,7 @@ package fr.solutec.model;
  */
 public class User {
 
- 
+    public static int id_Actif;
    
     
     private int id_User ;

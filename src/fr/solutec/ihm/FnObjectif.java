@@ -11,6 +11,9 @@ import static fr.solutec.ihm.FnInscription.main;
 import static fr.solutec.ihm.FnMainPage.main;
 import fr.solutec.model.Objectif;
 import fr.solutec.model.User;
+import fr.solutec.main.Principal;
+import static fr.solutec.model.User.id_Actif;
+
 
 /**
  *
@@ -209,9 +212,10 @@ public class FnObjectif extends javax.swing.JFrame {
         String catego = CB_Categorie.getSelectedItem().toString();
         int valmax = Integer.parseInt(T_ValMax.getText());
         int valactu = 0;
+    
         
         User u = new User();
-       // u.setId(id_Actif);
+        u.setId(id_Actif);
         
         Objectif obj = new Objectif() ;
         obj.setDescription(descri);

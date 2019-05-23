@@ -10,15 +10,15 @@ package fr.solutec.main;
 
 public class Principal {
     
-    
+     
      public static void main(String args[])
   {
     //do something
   }
     
      
-static {
-int id_Actif;
-}  
+ 
+
+  
 
 }

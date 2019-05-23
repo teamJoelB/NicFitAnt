@@ -5,6 +5,8 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.model.User;
+
 /**
  *
  * @author ESIC
@@ -300,6 +302,7 @@ public class FnMainPage extends javax.swing.JFrame {
     // deconexion retour acceuil
     private void B_retour_accActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_retour_accActionPerformed
    
+       User.id_Actif = 0;
        FnAcceuil Acc = new FnAcceuil();
        this.setVisible(false);
        Acc.setVisible(true);

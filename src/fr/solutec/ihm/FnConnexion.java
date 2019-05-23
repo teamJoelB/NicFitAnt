@@ -7,6 +7,7 @@ package fr.solutec.ihm;
 
 import fr.solutec.dao.UserDao;
 import fr.solutec.model.User;
+import static fr.solutec.model.User.id_Actif;
 import javax.swing.JOptionPane;
 
 /**
@@ -152,6 +153,7 @@ public class FnConnexion extends javax.swing.JFrame {
       try {
           User user = UserDao.get_By_Login_Pass(login, mdp);
             if(user != null){
+              User.id_Actif = user.getId();
               FnMainPage M_p = new FnMainPage();
               this.setVisible(false);
               M_p.setVisible(true);  
