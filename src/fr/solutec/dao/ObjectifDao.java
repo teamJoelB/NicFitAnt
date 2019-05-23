@@ -19,7 +19,7 @@ public class ObjectifDao {
     
     //Ajout objectif dans la base de données
     
-        public static void insert(Objectif o) throws SQLException{
+        public static void insert_Obj(Objectif o) throws SQLException{
         String sql  ="INSERT INTO objectif (description, categorie, valeur_Max, echeance) VALUES (?,?,?,?)";
         Connection connexion = ConnectBd.getConnection(); 
         
@@ -33,6 +33,25 @@ public class ObjectifDao {
         requete.execute();
         
     }
+        
+        
+         public static void update_Obj(Objectif o) throws SQLException{
+        String sql  ="UPDATE INTO objectif (description, categorie, valeur_Max, echeance) VALUES (?,?,?,?)";
+        Connection connexion = ConnectBd.getConnection(); 
+        
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setString(1, o.getDescription());
+        requete.setString(2, o.getCategorie());
+        requete.setInt(3, o.getValeur_Max());
+        requete.setDate(4, o.getEcheance());
+
+       
+        requete.execute();
+        
+    }
+        
+        
+        
         
         
     //Génère liste objectifs de la base de données (renvoie liste)

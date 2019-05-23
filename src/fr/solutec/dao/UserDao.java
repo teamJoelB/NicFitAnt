@@ -55,7 +55,7 @@ public class UserDao {
     
     // Inscription (ajouter User dans base de données)
     
-    public static void insert(User u) throws SQLException{
+    public static void insert_Us(User u) throws SQLException{
         String sql  ="INSERT INTO personne (nom, prenom, age, mail, login, mdp, taille, sexe) VALUES (?,?,?,?,?,?,?,?)";
         Connection connexion = ConnectBd.getConnection(); 
         
@@ -73,7 +73,7 @@ public class UserDao {
     }
     
         // Mettre à jour info profil utilisateur
-     public static void update(User u) throws SQLException{
+     public static void update_Us(User u) throws SQLException{
         String sql  ="UPDATE 'personne' SET 'nom' = ?, 'prenom' = ?, 'age' =?, 'mail' =?, 'login'=?, 'mdp'=?, 'taille'=?, 'sexe'=? WHERE login=? AND mdp=?";
         Connection connexion = ConnectBd.getConnection(); 
         
