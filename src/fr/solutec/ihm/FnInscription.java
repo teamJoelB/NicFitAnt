@@ -316,6 +316,7 @@ public class FnInscription extends javax.swing.JFrame {
         
         try {
             UserDao.insert_Us(user);
+            
             this.setVisible(false);
             FnAcceuil Acceuil = new FnAcceuil();
             this.setVisible(false);

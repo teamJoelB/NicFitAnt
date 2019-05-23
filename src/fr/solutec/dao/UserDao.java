@@ -70,6 +70,7 @@ public class UserDao {
         requete.setString(8, u.getSexe());
        
         requete.execute();
+  
     }
     
         // Mettre à jour info profil utilisateur
