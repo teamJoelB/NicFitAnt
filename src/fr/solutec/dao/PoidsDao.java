@@ -21,7 +21,7 @@ import java.sql.SQLException;
   // Inscription (ajouter valeur poids dans classe Poids dans base de données)
 public class PoidsDao {
     
-        public static void insert(Poids p) throws SQLException{
+        public static void insert_Poid(Poids p) throws SQLException{
         String sql  ="INSERT INTO poids (val_Poids) VALUES (?)";
         Connection connexion = ConnectBd.getConnection(); 
         
@@ -35,7 +35,7 @@ public class PoidsDao {
         
         //Mettre à jour poids
         
-     public static void update(Poids p) throws SQLException{
+     public static void update_Poid(Poids p) throws SQLException{
         String sql  ="UPDATE 'poids' SET 'val_Poids' = ? WHERE id_User=User_id_User";
         Connection connexion = ConnectBd.getConnection(); 
         
