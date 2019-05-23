@@ -5,6 +5,10 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.UserDao;
+import fr.solutec.model.User;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ESIC
@@ -46,6 +50,10 @@ public class FnInscription extends javax.swing.JFrame {
         CB_Genre = new javax.swing.JComboBox<>();
         B_Retour = new javax.swing.JButton();
         B_Valid_Inscri = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        T_Mdp = new javax.swing.JTextField();
+        T_Age = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
 
         jLabel3.setText("jLabel3");
 
@@ -126,6 +134,17 @@ public class FnInscription extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setText("Mot de passe :");
+
+        T_Mdp.setText("   ");
+        T_Mdp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                T_MdpActionPerformed(evt);
+            }
+        });
+
+        jLabel11.setText("Age :");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -152,17 +171,24 @@ public class FnInscription extends javax.swing.JFrame {
                                         .addComponent(jLabel6))
                                     .addGap(142, 142, 142)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(157, 157, 157))
-                            .addComponent(jLabel9))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11))
+                                .addGap(111, 111, 111)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(T_Login, javax.swing.GroupLayout.DEFAULT_SIZE, 275, Short.MAX_VALUE)
                             .addComponent(T_Nom)
                             .addComponent(T_Prenom)
                             .addComponent(T_Mail)
                             .addComponent(T_Taille)
                             .addComponent(T_Poid)
-                            .addComponent(CB_Genre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(CB_Genre, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(T_Mdp)
+                            .addComponent(T_Age))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -198,11 +224,19 @@ public class FnInscription extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(T_Poid, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(T_Mdp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(T_Age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel11))
+                .addGap(14, 14, 14)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(B_Retour)
                     .addComponent(B_Valid_Inscri))
-                .addGap(38, 38, 38))
+                .addContainerGap())
         );
 
         pack();
@@ -236,15 +270,64 @@ public class FnInscription extends javax.swing.JFrame {
 
     
     
+    
+    
+    private int id_User ;
+    private String login;
+    private String nom ;
+    private String prenom ;
+    private String mail;
+    private String mdp ; 
+    private double taille;
+    private int age;
+    private String sexe; 
+    
     // validation et enregistrement variables puis Retour acceuil
     
     private void B_Valid_InscriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_Valid_InscriActionPerformed
+
+        String login = T_Login.getText ();
+        String nom = T_Nom.getText();
+        String prenom = T_Prenom.getText();
+        String mail = T_Mail.getText();
+        String mdp = T_Mdp.getText();
+        Double taille = Double.parseDouble( T_Taille.getText());
+        int age = Integer.parseInt(T_Age.getText());
+        String sexe = CB_Genre.getSelectedItem().toString();
         
-        FnAcceuil Acceuil = new FnAcceuil();
+  
+        
+         
+        User user =new User();
+        user.setNom(nom);
+        user.setPrenom(prenom);
+        user.setMail(mail);
+        user.setMdp(mdp);
+        user.setLogin(login);
+        user.setTaille(taille);
+        user.setAge(age);
+        user.setSexe(sexe);
+        
+        
+        
+        
+        try {
+            UserDao.insert_Us(user);
+            this.setVisible(false);
+            FnAcceuil Acceuil = new FnAcceuil();
             this.setVisible(false);
             Acceuil.setVisible(true);
+            
+            
+            
+        } catch (Exception e){ JOptionPane.showMessageDialog(rootPane, e.getMessage());}
+  
         
     }//GEN-LAST:event_B_Valid_InscriActionPerformed
+
+    private void T_MdpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_T_MdpActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_T_MdpActionPerformed
 
     
     
@@ -291,13 +374,17 @@ public class FnInscription extends javax.swing.JFrame {
     private javax.swing.JButton B_Valid_Inscri;
     private javax.swing.JComboBox<String> CB_Genre;
     private javax.swing.JPanel P_fond3;
+    private javax.swing.JTextField T_Age;
     private javax.swing.JTextField T_Login;
     private javax.swing.JTextField T_Mail;
+    private javax.swing.JTextField T_Mdp;
     private javax.swing.JTextField T_Nom;
     private javax.swing.JTextField T_Poid;
     private javax.swing.JTextField T_Prenom;
     private javax.swing.JTextField T_Taille;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
