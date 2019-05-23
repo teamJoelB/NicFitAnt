@@ -81,4 +81,33 @@ public class ObjectifDao {
         return objectifs;
     }
     
+            //Génère liste objectifs de la base de données (renvoie liste)
+        
+        public static List<Objectif> getUserObjectif() throws SQLException{
+        
+            List<Objectif> Uobjectifs = new ArrayList<>();
+        Connection connexion = ConnectBd.getConnection(); 
+        
+        String sql = "SELECT description, valeur_Max, valeur_Actuelle FROM objectif WHERE id_User=User_id_User";
+        
+        Statement requete = connexion.createStatement();
+        ResultSet rs = requete.executeQuery(sql);
+        
+        while (rs.next()){
+            Objectif o = new Objectif();
+    
+            o.setDescription(rs.getString("description"));
+  
+            o.setValeur_Max(rs.getInt("valeur_Max")); 
+            o.setValeur_Actuelle(rs.getInt("valeur_Actuelle")); 
+//            o.setEcheance(rs.getDate("echeance"));
+            
+            Uobjectifs.add(o);
+        }
+        
+        return Uobjectifs;
+    }
+        
+        
+        
 }
