@@ -298,7 +298,7 @@ public class FnInscription extends javax.swing.JFrame {
         Double taille = Double.parseDouble( T_Taille.getText());
         int age = Integer.parseInt(T_Age.getText());
         String sexe = CB_Genre.getSelectedItem().toString();
-  
+    
         
          
         User user =new User();
@@ -316,6 +316,9 @@ public class FnInscription extends javax.swing.JFrame {
         
         try {
             UserDao.insert_Us(user);
+            Poids poi = new Poids();
+            poi.setUser(user);
+            PoidsDao.insert_Poid(poi);
             
             this.setVisible(false);
             FnAcceuil Acceuil = new FnAcceuil();
