@@ -18,23 +18,27 @@ import java.util.Date;
  * @author ESIC
  */
 public class LogDao {
+
+    private static User user;
     
-//    public static Log derniere_Connexion(Log l)throws SQLException{
-//        
-//    String sql  ="SELECT MAX(date_Deconnexion) FROM Log WHERE id_User=User_id_User";
-//        Connection connexion = ConnectBd.getConnection(); 
-//        PreparedStatement requete = connexion.prepareStatement(sql);
-//        ResultSet rs = requete.executeQuery();
-//        
-//        if (rs.next()){
-//            l = new Log();
-//            l.setId_Log(rs.getId_Log("id_Log"));
-//            l.setDate_Deconnexion(rs.getDate_Deconnexion("date_Deconnexion"));
-//            l.setUser(rs.getUser("user"));
-//            
-//        }
-//   
-//        return l;
-//        
-//    }
+    public static Log derniere_Connexion(Log l)throws SQLException{
+        
+    String sql  ="SELECT id_Log, date_Deconnexion, User_id_User " +
+"From log " +
+"Where date_Deconnexion=(Select MAX(date_Deconnexion) " +
+"From log)";
+        Connection connexion = ConnectBd.getConnection(); 
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        ResultSet rs = requete.executeQuery();
+        
+        if (rs.next()){
+            l = new Log();
+            l.setId_Log(rs.getInt("id_Log"));
+            l.setDate_Deconnexion(rs.getDate("date_Deconnexion"));
+            
+        }
+   
+        return l;
+        
+    }
 }
