@@ -5,7 +5,15 @@
  */
 package fr.solutec.ihm;
 
+import fr.solutec.dao.LogDao;
+import fr.solutec.dao.ObjectifDao;
+import fr.solutec.model.Log;
 import fr.solutec.model.User;
+import static fr.solutec.model.User.id_Actif;
+import java.util.Calendar;
+
+import java.sql.Date;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -292,7 +300,7 @@ public class FnMainPage extends javax.swing.JFrame {
     private void B_AideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_AideActionPerformed
         
        FnAide AID = new FnAide();
-       this.setVisible(false);
+       
        AID.setVisible(true);
    
     }//GEN-LAST:event_B_AideActionPerformed
@@ -302,13 +310,33 @@ public class FnMainPage extends javax.swing.JFrame {
     // deconexion retour acceuil
     private void B_retour_accActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_retour_accActionPerformed
    
-       User.id_Actif = 0;
-       FnAcceuil Acc = new FnAcceuil();
-       this.setVisible(false);
-       Acc.setVisible(true);
+       User user1 = new User();
+        user1.setId(id_Actif);
+     
+        Calendar currenttime = Calendar.getInstance();
+        Date sqldate = new Date((currenttime.getTime()).getTime());
+        
+   
+       Log log = new Log();
+       log.setDate_Deconnexion(sqldate);
+       log.setUser(user1);
 
+       
+ try {
+            LogDao.insert_Log(log);
+            
+             User.id_Actif = 0;
+             FnAcceuil Acc = new FnAcceuil();
+             this.setVisible(false);
+             Acc.setVisible(true);
+  
+        } catch (Exception e) {
+            JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
+           
+       
+       
     }//GEN-LAST:event_B_retour_accActionPerformed
-
+    }
     
     
     

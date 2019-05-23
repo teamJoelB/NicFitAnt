@@ -104,16 +104,20 @@
                                   </Group>
                                   <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="CB_Categorie" min="-2" max="-2" attributes="0"/>
-                                          <Component id="T_Descri" pref="220" max="32767" attributes="0"/>
-                                          <Component id="T_ValMax" alignment="0" max="32767" attributes="0"/>
-                                      </Group>
                                       <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="CB_Categorie" min="-2" max="-2" attributes="0"/>
+                                              <Component id="T_Descri" pref="220" max="32767" attributes="0"/>
+                                              <Component id="T_ValMax" alignment="0" max="32767" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                                          <Component id="T_Me" min="-2" pref="129" max="-2" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="231" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -125,10 +129,18 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="T_Descri" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="T_Descri" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                          <Component id="T_Me" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
@@ -214,6 +226,11 @@
               <Font name="Dialog" size="8" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Attention la valeur de l&apos;objectif doit etre repr&#xe9;sent&#xe9;e par un entier "/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="T_Me">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Objectif ajout&#xe9;"/>
           </Properties>
         </Component>
       </SubComponents>
