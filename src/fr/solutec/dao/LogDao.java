@@ -35,6 +35,7 @@ public class LogDao {
             l = new Log();
             l.setId_Log(rs.getInt("id_Log"));
             l.setDate_Deconnexion(rs.getDate("date_Deconnexion"));
+//            l.(rs.getUser("User_id_User"));
             
         }
    
