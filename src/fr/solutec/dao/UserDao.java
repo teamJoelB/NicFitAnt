@@ -25,7 +25,7 @@ public class UserDao {
     public static User get_By_Login_Pass(String login, String mdp) throws SQLException{
         User u = null;
         
-        String sql = "SELECT * FROM personne WHERE login=? AND mdp=?";
+        String sql = "SELECT * FROM user WHERE login=? AND mdp=?";
             Connection connexion = ConnectBd.getConnection();
         
             PreparedStatement requete = connexion.prepareStatement(sql);
@@ -56,7 +56,7 @@ public class UserDao {
     // Inscription (ajouter User dans base de données)
     
     public static void insert_Us(User u) throws SQLException{
-        String sql  ="INSERT INTO personne (nom, prenom, age, mail, login, mdp, taille, sexe) VALUES (?,?,?,?,?,?,?,?)";
+        String sql  ="INSERT INTO user (nom, prenom, age, mail, login, mdp, taille, sexe) VALUES (?,?,?,?,?,?,?,?)";
         Connection connexion = ConnectBd.getConnection(); 
         
         PreparedStatement requete = connexion.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class UserDao {
     
         // Mettre à jour info profil utilisateur
      public static void update_Us(User u) throws SQLException{
-        String sql  ="UPDATE 'personne' SET 'nom' = ?, 'prenom' = ?, 'age' =?, 'mail' =?, 'login'=?, 'mdp'=?, 'taille'=?, 'sexe'=? WHERE login=? AND mdp=?";
+        String sql  ="UPDATE 'user' SET 'nom' = ?, 'prenom' = ?, 'age' =?, 'mail' =?, 'login'=?, 'mdp'=?, 'taille'=?, 'sexe'=? WHERE login=? AND mdp=?";
         Connection connexion = ConnectBd.getConnection(); 
         
         PreparedStatement requete = connexion.prepareStatement(sql);
