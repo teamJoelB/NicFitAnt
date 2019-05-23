@@ -64,14 +64,16 @@ public class LogDao {
     
     public static Log derniere_Connexion(Log l)throws SQLException{
         
-    String sql  ="SELECT id_Log, date_Deconnexion, User_id_User " +
-"From log " +
-"Where date_Deconnexion=(Select MAX(date_Deconnexion) " +
+    String sql  ="SELECT  date_Deconnexion From log " +
+"Where date_Deconnexion=(Select MAX(date_Deconnexion) AND User_id_User = ?" +
 "From log)";
         Connection connexion = ConnectBd.getConnection(); 
-        PreparedStatement requete = connexion.prepareStatement(sql);
-        ResultSet rs = requete.executeQuery();
         
+        
+        
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, l.getUser().getId());
+        ResultSet rs = requete.executeQuery();
         if (rs.next()){
             l = new Log();
             l.setId_Log(rs.getInt("id_Log"));
