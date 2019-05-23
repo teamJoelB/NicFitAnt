@@ -53,6 +53,8 @@ public class UserDao {
         return u;
 }
     
+      
+    
     // Inscription (ajouter User dans base de données)
     
     public static void insert_Us(User u) throws SQLException{

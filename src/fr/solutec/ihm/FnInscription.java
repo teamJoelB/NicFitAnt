@@ -316,9 +316,6 @@ public class FnInscription extends javax.swing.JFrame {
         
         try {
             UserDao.insert_Us(user);
-            Poids poi = new Poids();
-            poi.setUser(user);
-            PoidsDao.insert_Poid(poi);
             
             this.setVisible(false);
             FnAcceuil Acceuil = new FnAcceuil();
