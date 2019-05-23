@@ -122,7 +122,7 @@ public class FnMainPage extends javax.swing.JFrame {
         P_fond_quotidienLayout.setVerticalGroup(
             P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(P_fond_quotidienLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
+                .addGap(46, 46, 46)
                 .addGroup(P_fond_quotidienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Lb_Q1)
                     .addComponent(Check_OQ1))
@@ -270,7 +270,7 @@ public class FnMainPage extends javax.swing.JFrame {
                     .addComponent(B_Profil)
                     .addComponent(B_retour_acc)
                     .addComponent(B_Aide))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 173, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 176, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(P_fond_quotidien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()

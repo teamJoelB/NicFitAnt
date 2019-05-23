@@ -34,6 +34,30 @@ public class LogDao {
         requete.execute();
            
     }
+
+    // Compter nombre connexion
+    
+    public static int nombre_Connexion(Log l) throws SQLException{
+        String sql= "SELECT Count(User_id_User) as lignes FROM log WHERE User_id_User = ? GROUP BY User_id_User";
+        Connection connexion = ConnectBd.getConnection(); 
+        
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, l.getUser().getId());
+        
+        ResultSet rs = requete.executeQuery();
+        
+        
+        int lignes = 0;
+        rs.next();
+        lignes = rs.getInt("lignes");
+        return lignes;
+        
+     }
+        
+        
+   
+    
+    
     
     
     //Récupérer information dernière connexion (Date, heure)
@@ -58,5 +82,6 @@ public class LogDao {
    
         return l;
         
+      
     }
 }
