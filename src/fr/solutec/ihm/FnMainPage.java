@@ -409,9 +409,6 @@ FnAide Aide= new FnAide();
 Aide.setVisible(true);
 }
 
-else{
-    JOptionPane.showMessageDialog(null, "Votre dernière déconnexion:" + log_Connecte.getDate_Deconnexion());
-}
 
 } catch (Exception e) {
 JOptionPane.showInternalMessageDialog(rootPane, e.getMessage() + " Erreur");
